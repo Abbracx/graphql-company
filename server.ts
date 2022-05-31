@@ -23,7 +23,7 @@ app.use(
   })
 );
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 500;
 app.listen(PORT, () => {
   console.log(`GraphQL running on port ${PORT}`);
 });
