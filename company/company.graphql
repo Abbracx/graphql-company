@@ -1,0 +1,34 @@
+
+type Query {
+    company: Company
+    getEmployeeFromDepartment(id: ID!, name: String!): Employee
+    getManagerFromDepartment(name: String!): Employee
+    getDepartment(name: String!): Department
+}
+
+type Mutation {
+
+    addEmployee(id: ID!, name: String!, role: String!, department: String): Employee
+    addManager(id: ID!, name: String!): Employee
+    addDepartment(id: ID!, name: String!): Employee
+}
+
+type Company {
+    name: String!
+    employees: [Employee]
+    departments: [Department]
+}
+
+type Employee {
+    id: ID!
+    name: String!
+    role: String!
+    department: Department
+}
+
+type Department{
+    name: String!
+    noOfEmployees: Int
+    employeeID: [Int]
+    manager: Int!
+}
